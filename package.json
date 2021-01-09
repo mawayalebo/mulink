@@ -1,0 +1,22 @@
+{
+  "name": "mulink",
+  "version": "1.0.0",
+  "description": "a site to sell stationary to students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mawayalebo/mulink.git"
+  },
+  "keywords": [
+    "mulink"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mawayalebo/mulink/issues"
+  },
+  "homepage": "https://github.com/mawayalebo/mulink#readme"
+}
