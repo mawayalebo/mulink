@@ -1,2 +1,2 @@
 # mulink
-a site for selling stationaries to students
+a market place for varsity students to buy and sell stationary and accessories
