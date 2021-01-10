@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose =require('mongoose');
 const { keys } = require('./keys');
+const authRoutes = require('./routes/authRoutes');
 
 //set view engine
 app.set('view engine', 'ejs');
@@ -23,3 +24,4 @@ mongoose.connect(keys.mongo.connectString,{useNewUrlParser: true, useUnifiedTopo
 app.get('/', (req, res)=>{
     res.render('home');
 })
+app.use(authRoutes.route);
