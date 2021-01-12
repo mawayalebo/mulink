@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         minlength: [3, 'please enter a name']
     },
-    LastName: {
+    lastName: {
         type: String,
         required: [true, 'Please enter your last name'],
         lowercase: true,
