@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mongoose =require('mongoose');
+const mongoose = require('mongoose');
 const { keys } = require('./keys');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
