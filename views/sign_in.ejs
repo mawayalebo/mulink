@@ -15,13 +15,15 @@
                 <div class="container">
                     <form>
                         <div class="input-field">
-                            <input type="email" name="" id="">
+                            <input type="email" name="email" id="">
                             <label for="input-field">Email</label>
                         </div>
+                        <span class="email error"></span>
                         <div class="input-field">
-                            <input type=password name="" id="">
+                            <input type=password name="password" id="">
                             <label for="input-field">Password</label>
                         </div>
+                        <span class="password error"></span>
                         <div class="row">
                             <div class="col s12 m12 l12 xl12">
                                 <button class="btn waves-effect waves-light large right" type="submit" name="action">Sign In
@@ -41,3 +43,37 @@
     <br>
     <br>
 <%- include('./partials/footer.ejs'); -%>
+
+<script>
+    const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // reset errors
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      // get values
+      const email = form.email.value;
+      const password = form.password.value;
+      try {
+        const res = await fetch('/sign_in', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: {'Content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          emailError.textContent = data.errors.email;
+          passwordError.textContent = data.errors.password;
+        }
+        if (data.user) {
+          location.assign('/');
+        }
+      }
+      catch (err) {
+        console.log(err);
+      }
+    });
+  </script>

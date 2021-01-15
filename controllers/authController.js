@@ -83,7 +83,7 @@ const postSignIn = async(req, res)=>{
   }
 };
 
-const getLogOut = (req, res)=>{
+const getSignOut = (req, res)=>{
     res.cookie('jwt', '', { maxAge: 1 });
     res.redirect('/');
 }
@@ -92,5 +92,5 @@ module.exports = {
     getSignUp,
     postSignIn,
     postSignUp,
-    getLogOut
+    getSignOut
 };
